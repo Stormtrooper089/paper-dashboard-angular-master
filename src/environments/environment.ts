@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  qrListUrl:'https://rvbackoffice.herokuapp.com/api/getQrList',
-  qrRequestUrl: 'https://rvbackoffice.herokuapp.com/api/generateQRExcel',
-  fileDownloadUrl:'https://rvbackoffice.herokuapp.com/api/downloadExcel/'
+  qrListUrl:'http://localhost:8080/api/getQrList',
+  qrRequestUrl: 'http://localhost:8080/api/generateQRExcel',
+  fileDownloadUrl:'http://localhost:8080/api/downloadExcel/'
 };
