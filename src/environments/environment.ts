@@ -4,5 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  qrListUrl:'https://rvbackoffice.herokuapp.com/api/getQrList',
+  qrRequestUrl: 'https://rvbackoffice.herokuapp.com/api/generateQRExcel',
+  fileDownloadUrl:'https://rvbackoffice.herokuapp.com/api/downloadExcel/'
 };

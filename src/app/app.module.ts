@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from "@angular/common";
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
@@ -36,6 +38,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     FixedPluginModule,
     HttpClientModule,
     NgHttpLoaderModule.forRoot(),
+    BrowserModule,
+    CommonModule,
   ],
   providers: [HttpClient,HttpClientModule],
   bootstrap: [AppComponent]

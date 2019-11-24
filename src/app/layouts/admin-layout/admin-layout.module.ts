@@ -10,10 +10,10 @@ import { UserComponent }            from '../../pages/user/user.component';
 import { TableComponent }           from '../../pages/table/table.component';
 import { TypographyComponent }      from '../../pages/typography/typography.component';
 import { IconsComponent }           from '../../pages/icons/icons.component';
-import { MapsComponent }            from '../../pages/maps/maps.component';
 import { NotificationsComponent }   from '../../pages/notifications/notifications.component';
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
-import {QrComponent} from '../../pages/qr/qr.component';
+import {QrComponent}                from '../../pages/qr/qr.component';
+import {DisplayQrComponent}         from '../../pages/display-qr/display-qr.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   declarations: [
     DashboardComponent,
@@ -31,9 +31,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UpgradeComponent,
     TypographyComponent,
     IconsComponent,
-    MapsComponent,
     NotificationsComponent,
     QrComponent,
+    DisplayQrComponent
   ]
 })
 
