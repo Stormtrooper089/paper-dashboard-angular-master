@@ -19,18 +19,11 @@ export class QrComponent implements OnInit{
     }
 
     submitQrRequest(){
-
-        const httpOptions = {
-            headers: new HttpHeaders({
-              'Content-Type':  'application/json'
-            }),
-            responseType: 'text'
-          };
-          
         let bodyData = JSON.parse(JSON.stringify(this.qrRequest));  
         this.httpclient.post(this.qrRequestUrl,bodyData,{responseType: 'text'}).subscribe(
           (data:any) => {
-              console.log('filename '+data)              
+              console.log('filename '+data)   
+                        
               window.open(this.fileDownloadUrl+data.split('.')[0]);
           }
         );
