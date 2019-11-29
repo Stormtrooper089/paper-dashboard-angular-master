@@ -23,8 +23,10 @@ export class QrComponent implements OnInit{
         let bodyData = JSON.parse(JSON.stringify(this.qrRequest));  
         this.httpclient.post(this.qrRequestUrl,bodyData,{responseType: 'text'}).subscribe(
           (data:any) => {
-              console.log('filename '+data)    
-              window.open(this.fileDownloadUrl+data.split('.')[0],"_blank");
+              console.log('filename '+data)
+              if(data != null){    
+                window.open(this.fileDownloadUrl+data,"_blank");
+              }
           }
         );
     }
