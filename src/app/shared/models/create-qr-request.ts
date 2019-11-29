@@ -2,12 +2,12 @@ export class CreateQrRequest{
     productId:string;
     numberOfQrCodeRequired:number;
     pointsForCode:number;
-    activationStatus:number;
+    activationStatus:string;
 
     constructor(productId:string,
         numberOfQrCodeRequired:number,
         pointsForCode:number,
-        activationStatus:number){
+        activationStatus:string){
             this.productId=productId;
             this.numberOfQrCodeRequired=numberOfQrCodeRequired;
             this.pointsForCode=pointsForCode;

@@ -11,12 +11,13 @@ import {environment} from '../../../environments/environment';
 
 export class QrComponent implements OnInit{
     ngOnInit(){
+      this.qrRequest = new CreateQrRequest("",0,0,"true");
     }
     qrRequest: CreateQrRequest;
     qrRequestUrl: string = environment.qrRequestUrl;
     fileDownloadUrl: string = environment.fileDownloadUrl;
     constructor(public httpclient: HttpClient){
-            this.qrRequest = new CreateQrRequest("",0,0,0);
+            this.qrRequest = new CreateQrRequest("",0,0,"true");
     }
 
     submitQrRequest(){
@@ -25,7 +26,7 @@ export class QrComponent implements OnInit{
           (data:any) => {
               console.log('filename '+data)
               if(data != null){    
-                window.open(this.fileDownloadUrl+data,"_blank");
+                window.open(this.fileDownloadUrl+data.split(".")[0],"_blank");
               }
           }
         );
