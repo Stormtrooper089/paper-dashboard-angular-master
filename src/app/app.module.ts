@@ -17,6 +17,10 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 
@@ -40,6 +44,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     NgHttpLoaderModule.forRoot(),
     BrowserModule,
     CommonModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule,
   ],
   providers: [HttpClient,HttpClientModule],
   bootstrap: [AppComponent]

@@ -21,6 +21,15 @@ export class DisplayQrComponent implements OnInit{
     public qrMaster: QrMaster[];
     public qrListUrl: string = environment.qrListUrl;
 
+    p: number = 1;
+    //sorting
+  key: string = 'productId'; //set default
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
     constructor(public http: HttpClient){
         this.displayQrs();
     }
