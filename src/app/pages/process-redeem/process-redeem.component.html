@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Generated QR Batch </h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+            <nav class="navbar">
+                <input class="form-control" type="text" name="search" [(ngModel)]="filter">      
+              </nav>
+          <table class="table">
+            <thead class=" text-primary"> 
+              <th>
+                Mobile NUmber
+              </th>
+              <th (click)="sort('productId')">
+                User
+              </th>
+              <th  class="text-right">
+                Redeem Value
+              </th>
+              <th>
+                Redeem Date
+              </th>
+              <th>
+                Redeem Time
+              </th>
+              <th>
+                  Accept
+                </th>
+                <th>
+                    Reject
+                  </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of qrMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+                <td>
+                  {{item.mobileNumber}}
+                </td>
+                <td>
+                  {{item.redeemUser}}
+                </td>
+                <td class="text-right">
+                  {{item.redeemValue}}
+                </td>
+                <td>
+                    {{item.redeemDate}}
+                </td>
+                <td>
+                  {{item.redeemTime}}
+                </td>
+                <td>
+                    <button type="submit" [(ngModel)]="item"  class="btn btn-primary" (click)="accept(item)">Accept</button>
+                </td>
+                <td>
+                    <button type="submit" [(ngModel)]="item"  class="btn btn-danger" (click)="reject(item)">Reject</button>
+                </td>
+              </tr>
+            </tbody>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

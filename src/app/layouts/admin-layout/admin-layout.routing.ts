@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../pages/notifications/notifications.
 import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 import {QrComponent} from '../../pages/qr/qr.component';
 import { DisplayQrComponent } from 'app/pages/display-qr/display-qr.component';
+import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -20,5 +21,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'qr',             component: QrComponent },
-    { path: 'displayQr',      component: DisplayQrComponent }
+    { path: 'displayQr',      component: DisplayQrComponent },
+    { path: 'Redeemption',      component: ProcessRedeemComponent }
 ];
