@@ -24,7 +24,7 @@ export class ProcessRedeemComponent implements OnInit{
 
     p: number = 1;
     //sorting
-  key: string = 'productId'; //set default
+  key: string = 'redeemUser'; //set default
   reverse: boolean = false;
   sort(key){
     this.key = key;
