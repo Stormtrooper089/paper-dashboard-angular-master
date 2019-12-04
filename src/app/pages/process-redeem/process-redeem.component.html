@@ -51,10 +51,12 @@
                   {{item.redeemTime}}
                 </td>
                 <td>
-                    <button type="submit" [(ngModel)]="item" name="btnAccept" class="btn btn-primary" (click)="accept(item)" value="test">Accept</button>
+                    <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
+                    (click)="accept(item)" >Accept</button>
                 </td>
                 <td>
-                    <button type="submit" [(ngModel)]="item" name="btnReject"  class="btn btn-danger" (click)="reject(item)"  value="testReject">Reject</button>
+                    <button type="submit" [(ngModel)]="item" ngDefaultControl  class="btn btn-danger" 
+                    (click)="reject(item)" >Reject</button>
                 </td>
               </tr>
             </tbody>
