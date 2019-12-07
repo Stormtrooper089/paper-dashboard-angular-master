@@ -24,7 +24,7 @@ export class ProcessRedeemComponent implements OnInit{
 
     p: number = 1;
     //sorting
-  key: string = 'productId'; //set default
+  key: string = 'redeemUser'; //set default
   reverse: boolean = false;
   sort(key){
     this.key = key;
@@ -48,9 +48,9 @@ export class ProcessRedeemComponent implements OnInit{
     accept(data:RVRedemption){
       data.redeemStatus="accept";
       let bodyData = JSON.parse(JSON.stringify(data));  
-      this.http.post(this.approvalUrl,bodyData,{responseType: 'text'}).subscribe(
-        (data:any) => {
-            console.log('filename '+data)
+      this.http.post(this.approvalUrl,bodyData).subscribe(
+        (redemptionList:RVRedemption[]) => {
+          this.qrMaster = redemptionList;
            
         }
       );

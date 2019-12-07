@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title"> Generated QR Batch </h4>
+        <h4 class="card-title"> Process Redeem Requests </h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -51,10 +51,12 @@
                   {{item.redeemTime}}
                 </td>
                 <td>
-                    <button type="submit" [(ngModel)]="item"  class="btn btn-primary" (click)="accept(item)">Accept</button>
+                    <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
+                    (click)="accept(item)" >Accept</button>
                 </td>
                 <td>
-                    <button type="submit" [(ngModel)]="item"  class="btn btn-danger" (click)="reject(item)">Reject</button>
+                    <button type="submit" [(ngModel)]="item" ngDefaultControl  class="btn btn-danger" 
+                    (click)="reject(item)" >Reject</button>
                 </td>
               </tr>
             </tbody>
