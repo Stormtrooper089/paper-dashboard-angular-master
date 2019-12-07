@@ -48,9 +48,9 @@ export class ProcessRedeemComponent implements OnInit{
     accept(data:RVRedemption){
       data.redeemStatus="accept";
       let bodyData = JSON.parse(JSON.stringify(data));  
-      this.http.post(this.approvalUrl,bodyData,{responseType: 'text'}).subscribe(
-        (data:any) => {
-            console.log('filename '+data)
+      this.http.post(this.approvalUrl,bodyData).subscribe(
+        (redemptionList:RVRedemption[]) => {
+          this.qrMaster = redemptionList;
            
         }
       );
