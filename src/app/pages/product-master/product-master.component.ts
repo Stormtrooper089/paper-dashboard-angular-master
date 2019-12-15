@@ -61,11 +61,11 @@ export class ProductMaster implements OnInit{
       const formData = new FormData();
         formData.append('file', this.fileData);
         console.log(this.fileData);
-        this.http.post(this.uploadUrl, formData)
+        this.http.post(this.uploadUrl, formData,{responseType: 'text'})
           .subscribe(res => {
             console.log(res);
             //this.uploadedFilePath = res;
-            alert('SUCCESS !!');
+            window.alert("Products added successfully . . .")
           })
     }
 
