@@ -30,7 +30,7 @@ export class ProductMaster implements OnInit{
   }
 
     constructor(public http: HttpClient){
-        //this.displayProducts();
+        this.displayProducts();
     }
 
     ngOnInit(){
