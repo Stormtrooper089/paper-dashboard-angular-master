@@ -9,5 +9,6 @@ export const environment = {
   qrRequestUrl: 'https://rvbackoffice.herokuapp.com/api/generateQRExcel',
   fileDownloadUrl:'https://rvbackoffice.herokuapp.com/api/downloadExcel/',
   redemptionListtUrl:'https://rvbackoffice.herokuapp.com/api/redeemRequests/',
-  redemptionPosttUrl:'https://rvbackoffice.herokuapp.com/api/postRedeemRequests/'
+  redemptionPosttUrl:'https://rvbackoffice.herokuapp.com/api/postRedeemRequests/',
+  productMasterUploadUrl:'https://rvbackoffice.herokuapp.com/api/upload/productMaster'
 };

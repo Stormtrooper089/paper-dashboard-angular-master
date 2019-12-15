@@ -20,6 +20,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.component';
+import { ProductMaster } from 'app/pages/product-master/product-master.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.
     NotificationsComponent,
     QrComponent,
     DisplayQrComponent,
-    ProcessRedeemComponent
+    ProcessRedeemComponent,
+    ProductMaster
   ]
 })
 

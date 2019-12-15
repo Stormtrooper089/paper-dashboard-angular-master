@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Products </h4>
+      </div>
+      <!-- File Upload -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 pr-1">
+              <div class="form-group">
+                  <label>Click here to Choose File</label>            
+                  <input type="file" name="image" (change)="fileProgress($event)" class="form-control" />
+              </div>
+              <div *ngIf="selectedFile">
+                  <label>Selected File {{ selectedFile }} </label> 
+              </div>
+              <div class="mb-3" *ngIf="uploadedFilePath">
+                  {{uploadedFilePath}}
+              </div>
+              <div class="update ml-auto mr-auto">
+                  <button type="submit" class="btn btn-primary btn-round" (click)="onSubmit()">Upload Products</button>
+                </div>
+            </div>
+              
+              
+                  
+              
+          
+      </div>
+      </div>
+      <!-- End File Upload -->
+
+      <div class="card-body">
+        <div class="table-responsive">
+            <nav class="navbar">
+                <input class="form-control" type="text" name="search" [(ngModel)]="filter">      
+              </nav>
+          <table class="table">
+            <thead class=" text-primary"> 
+              <th>
+                Item Code
+              </th>
+              <th (click)="sort('productId')">
+                Range
+              </th>
+              <th  class="text-right">
+                Product Name
+              </th>
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of qrMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+                <td>
+                  {{item.mobileNumber}}
+                </td>
+                <td>
+                  {{item.redeemUser}}
+                </td>
+                <td class="text-right">
+                  {{item.redeemValue}}
+                </td>
+              </tr>
+            </tbody>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
