@@ -10,5 +10,6 @@ export const environment = {
   fileDownloadUrl:'https://rvbackoffice.herokuapp.com/api/downloadExcel/',
   redemptionListtUrl:'https://rvbackoffice.herokuapp.com/api/redeemRequests/',
   redemptionPosttUrl:'https://rvbackoffice.herokuapp.com/api/postRedeemRequests/',
-  productMasterUploadUrl:'https://rvbackoffice.herokuapp.com/api/upload/productMaster'
+  productMasterUploadUrl:'https://rvbackoffice.herokuapp.com/api/upload/productMaster',
+  productListUrl: 'https://rvbackoffice.herokuapp.com/api/getProductList'
 };

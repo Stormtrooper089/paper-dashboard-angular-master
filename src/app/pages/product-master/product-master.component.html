@@ -50,15 +50,15 @@
               
             </thead>
             <tbody>
-              <tr *ngFor="let item of qrMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+              <tr *ngFor="let item of qrMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                 <td>
-                  {{item.mobileNumber}}
+                  {{item.itemCode}}
                 </td>
                 <td>
-                  {{item.redeemUser}}
+                  {{item.range}}
                 </td>
                 <td class="text-right">
-                  {{item.redeemValue}}
+                  {{item.productName}}
                 </td>
               </tr>
             </tbody>

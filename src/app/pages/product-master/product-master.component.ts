@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import { RVRedemption } from 'app/shared/models/RVRedemption';
+import { Product } from 'app/shared/models/product';
 
 @Component({
     selector: 'table-cmp',
@@ -12,8 +12,8 @@ import { RVRedemption } from 'app/shared/models/RVRedemption';
 export class ProductMaster implements OnInit{
     
     public rows: string[][];
-    public qrMaster: RVRedemption[];
-    public qrListUrl: string = environment.redemptionListtUrl;
+    public qrMaster: Product[];
+    public productListUrl: string = environment.productListUrl;
     public uploadUrl: string = environment.productMasterUploadUrl;
     fileData: File = null;
     previewUrl:any = null;
@@ -22,7 +22,7 @@ export class ProductMaster implements OnInit{
 
     p: number = 1;
     //sorting
-  key: string = 'redeemUser'; //set default
+  key: string = 'productName'; //set default
   reverse: boolean = false;
   sort(key){
     this.key = key;
@@ -65,14 +65,18 @@ export class ProductMaster implements OnInit{
           .subscribe(res => {
             console.log(res);
             //this.uploadedFilePath = res;
+            if(res === "success"){
             window.alert("Products added successfully . . .")
+            }else{
+              window.alert("Something went wrong . . .Check data file.")
+            }
           })
     }
 
     //End File Upload
     displayProducts(){
-        this.http.get(this.qrListUrl).subscribe(
-            (data:RVRedemption[]) => {
+        this.http.get(this.productListUrl).subscribe(
+            (data:Product[]) => {
               this.qrMaster = data;
             });
     }
