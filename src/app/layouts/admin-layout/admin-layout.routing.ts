@@ -12,6 +12,7 @@ import {QrComponent} from '../../pages/qr/qr.component';
 import { DisplayQrComponent } from 'app/pages/display-qr/display-qr.component';
 import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.component';
 import { ProductMaster } from 'app/pages/product-master/product-master.component';
+import { LoginComponent } from 'app/pages/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -23,5 +24,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'qr',             component: QrComponent },
     { path: 'displayQr',      component: DisplayQrComponent },
-    { path: 'Redeemption',    component: ProcessRedeemComponent }
+    { path: 'Redeemption',    component: ProcessRedeemComponent },
+    { path: '/login',         component: LoginComponent }
 ];

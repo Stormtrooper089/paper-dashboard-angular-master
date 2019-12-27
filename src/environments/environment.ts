@@ -11,5 +11,8 @@ export const environment = {
   redemptionListtUrl:'https://rvbackoffice.herokuapp.com/api/redeemRequests/',
   redemptionPosttUrl:'https://rvbackoffice.herokuapp.com/api/postRedeemRequests/',
   productMasterUploadUrl:'https://rvbackoffice.herokuapp.com/api/upload/productMaster',
-  productListUrl: 'https://rvbackoffice.herokuapp.com/api/getProductList'
+  productListUrl: 'https://rvbackoffice.herokuapp.com/api/getProductList',
+  appUserListUrl: 'https://rvbackoffice.herokuapp.com/user/list',
+  appUserCreateUrl: 'https://rvbackoffice.herokuapp.com/user/createUser',
+  appUserUpdateUrl: 'https://rvbackoffice.herokuapp.com/user/updateUser',
 };
