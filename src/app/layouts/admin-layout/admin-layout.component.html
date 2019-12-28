@@ -1,9 +1,9 @@
 <div class="wrapper">
-    <div class="sidebar" data-color="white" data-active-color="danger">
+    <div class="sidebar" data-color="white" data-active-color="danger" *ngIf="isSideBarVisible">
         <sidebar-cmp></sidebar-cmp>
     </div>
     <div class="main-panel">
-        <navbar-cmp></navbar-cmp>
+        <navbar-cmp *ngIf="isSideBarVisible" ></navbar-cmp >
         <div class="content">
             <router-outlet></router-outlet>
         </div>

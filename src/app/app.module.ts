@@ -22,6 +22,7 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AppService } from './app.service';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     Ng2OrderModule,
     NgxPaginationModule,
   ],
-  providers: [HttpClient,HttpClientModule],
+  providers: [HttpClient,HttpClientModule,AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

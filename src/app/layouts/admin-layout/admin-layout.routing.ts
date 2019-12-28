@@ -25,5 +25,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'qr',             component: QrComponent },
     { path: 'displayQr',      component: DisplayQrComponent },
     { path: 'Redeemption',    component: ProcessRedeemComponent },
-    { path: '/login',         component: LoginComponent }
+    { path: 'login',         component: LoginComponent }
 ];

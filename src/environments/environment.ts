@@ -15,4 +15,5 @@ export const environment = {
   appUserListUrl: 'https://rvbackoffice.herokuapp.com/user/list',
   appUserCreateUrl: 'https://rvbackoffice.herokuapp.com/user/createUser',
   appUserUpdateUrl: 'https://rvbackoffice.herokuapp.com/user/updateUser',
+  authenticationUrl: 'https://rvbackoffice.herokuapp.com/url',
 };
