@@ -14,7 +14,7 @@
                 <!-- <input type="text" class="form-control" name="productId" placeholder="Product ID" [(ngModel)]="qrRequest.productId"> -->
                 <select  class="form-control" [(ngModel)]="selectedProduct" name="item" id="productType" data-live-search="true">
                   <option value="" disabled selected>Select Product</option>
-                  <option *ngFor="let item of products" [value]="item.itemCode">{{item.productName}}</option>
+                  <option *ngFor="let item of products" [value]="item.productName">{{item.productName}}</option>
                 </select>
               </div>
             </div>
