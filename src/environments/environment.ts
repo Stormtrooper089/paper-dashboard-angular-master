@@ -16,4 +16,6 @@ export const environment = {
   appUserCreateUrl: 'https://rvbackoffice.herokuapp.com/user/createUser',
   appUserUpdateUrl: 'https://rvbackoffice.herokuapp.com/user/updateUser',
   authenticationUrl: 'https://rvbackoffice.herokuapp.com/login',
+  notificationListUrl: 'https://rvbackoffice.herokuapp.com/api/notification/list',
+  createNotificationUrl: 'https://rvbackoffice.herokuapp.com/api/notification/public',
 };

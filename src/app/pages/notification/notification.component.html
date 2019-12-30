@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Notifications </h4>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 pr-1">
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-3 pr-1">
+                    <div class="form-group">
+                      <label>Title</label>
+                      <input type="text" class="form-control"
+                       name="Title" placeholder="Title"
+                        [(ngModel)]="notification.notificationTitle">
+                    </div>
+                  </div>
+                  <div class="col-md-6 pr-1">
+                    <div class="form-group">
+                      <label>Message</label>
+                      <input type="text" class="form-control" name="Message" 
+                      placeholder="Message" [(ngModel)]="notification.notificationMessage">
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 pr-1">
+                    <div class="form-group">
+                      <label>Receiver</label>
+                      <input type="text" class="form-control col-md-12" 
+                      name="Receiver Key" placeholder="Receiver" [(ngModel)]="notification.notificationReceiverKey">
+                    </div>
+                  </div> 
+
+                </div>
+                <div class="row">
+                  <div class="update ml-auto mr-auto">
+                    <button type="submit" class="btn btn-primary btn-round" (click)="createNotification()">Send Notification</button>
+                  </div>
+                  
+                </div>
+                <div class="row">
+                    <h4>{{responseMessage}}</h4>
+                </div>
+              </form>
+            </div>
+      </div>
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive">
+            <nav class="navbar">
+                <input class="form-control" type="text" name="search" [(ngModel)]="filter">      
+              </nav>
+          <table class="table">
+            <thead class=" text-primary"> 
+              <th>
+                Title
+              </th>
+              <th (click)="sort('productId')">
+                Message
+              </th>
+              <th  class="text-right">
+                Receiver Key
+              </th>
+              <th>
+                Creation Date
+              </th>
+              <th>
+                Re-send
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of notifications | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                <td>
+                  {{item.notificationTitle}}
+                </td>
+                <td>
+                  {{item.notificationMessage}}
+                </td>
+                <td class="text-right">
+                  {{item.notificationReceiverKey}}
+                </td>
+                <td>
+                    {{item.notificationCreationDate}}
+                </td>
+                <td>
+                    <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
+                    (click)="sendNotification(item)" >Re-send</button>
+                </td>
+              </tr>
+            </tbody>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

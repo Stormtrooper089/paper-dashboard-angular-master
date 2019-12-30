@@ -15,6 +15,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/qr',            title: 'QR Code',           icon:'nc-align-center',class: '' },
     { path: '/displayQr',     title: 'Display QRs',       icon:'nc-paper',      class: '' },
     { path: '/Redeemption',   title: 'Redeem Requests',   icon:'nc-money-coins',class: '' },
+    { path: '/notification',  title: 'Create Notification',icon:'nc-money-coins',class: '' },
     { path: '/icons',         title: 'Icons',             icon:'nc-diamond',    class: '' },
     { path: '/notifications', title: 'Notifications',     icon:'nc-bell-55',    class: '' },
     { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },

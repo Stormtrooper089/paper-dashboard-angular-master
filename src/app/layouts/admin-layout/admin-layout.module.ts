@@ -22,6 +22,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.component';
 import { ProductMaster } from 'app/pages/product-master/product-master.component';
 import { LoginComponent } from 'app/pages/login/login.component';
+import { NotificationComponent } from 'app/pages/notification/notification.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { LoginComponent } from 'app/pages/login/login.component';
     DisplayQrComponent,
     ProcessRedeemComponent,
     ProductMaster,
-    LoginComponent
+    LoginComponent,
+    NotificationComponent
   ]
 })
 
