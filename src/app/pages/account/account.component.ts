@@ -4,6 +4,7 @@ import {environment} from '../../../environments/environment';
 import { User } from 'app/shared/models/User';
 import { Response } from 'app/shared/models/Response';
 import { RvUser } from 'app/shared/models/RvUser';
+import { UserKyc } from 'app/shared/models/UserKyc';
 
 @Component({
     selector: 'user-cmp',
@@ -15,11 +16,12 @@ export class AccountComponent implements OnInit{
 
     key: string = 'mobileNumber'; //set default
     public userListUrl: string = environment.UserListUrl;
-    public userCreateUrl: string = environment.appUserCreateUrl;
+    public showKycUrl: string = environment.showKycUrl;
     public userupdateUrl: string = environment.UserUpdateUrl;
     reverse: boolean = false;
     userMaster: RvUser[];
     user: RvUser;
+    userKyc: UserKyc;
     responseMessage:string;
     userAction:string = 'Create User';
     btnStatusClass:string = 'btn btn-primary';
@@ -65,7 +67,13 @@ export class AccountComponent implements OnInit{
         this.userAction = "Update User";
         this.user = item;
     }
-
+    viewKyc(item:RvUser){
+        this.http.get(this.showKycUrl+'/'+item.mobileNumber).subscribe(
+            (data:UserKyc) => {
+              this.userKyc = data;
+              console.log(this.userKyc);
+            });
+    }
     changeStatus(item:RvUser){
         if(item.active){
             item.active = false;

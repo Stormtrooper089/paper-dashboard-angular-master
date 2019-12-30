@@ -73,6 +73,9 @@
               <th>
                 Update User
               </th>
+              <th>
+                KYC
+              </th>
             </thead>
             <tbody>
               <tr *ngFor="let item of userMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
@@ -93,6 +96,10 @@
                 <td>
                   <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
                   (click)="update(item)" >Update</button>
+                </td>
+                <td>
+                  <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
+                  (click)="viewKyc(item)" >View KYC</button>
                 </td>
               </tr>
             </tbody>
