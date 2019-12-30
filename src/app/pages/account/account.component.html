@@ -51,6 +51,27 @@
       </div>
       <!-- End File Upload -->
 
+      <div class="card-body" *ngIf="hide">
+        <div class="row" >
+          
+            <div class="col-md-4 pr-1">
+                <img [src]="panCard"/>
+            </div>
+            <div class="col-md-4 pr-1">
+                <img [src]="aadharCard"/>
+            </div>
+            <div class="col-md-4 pr-1">
+                <img [src]="self"/>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <button type="submit" class="btn btn-primary btn-round" (click)="approveKyc()">Approve</button>
+          
+            <button type="submit" class="btn btn-danger btn-round" (click)="RejectKyc()">Reject</button>
+          </div>
+        </div>
+      </div>
       <div class="card-body">
         <div class="table-responsive">
             <nav class="navbar">
