@@ -23,6 +23,7 @@ import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.
 import { ProductMaster } from 'app/pages/product-master/product-master.component';
 import { LoginComponent } from 'app/pages/login/login.component';
 import { NotificationComponent } from 'app/pages/notification/notification.component';
+import { AccountComponent } from 'app/pages/account/account.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { NotificationComponent } from 'app/pages/notification/notification.compo
     ProcessRedeemComponent,
     ProductMaster,
     LoginComponent,
-    NotificationComponent
+    NotificationComponent,
+    AccountComponent
   ]
 })
 

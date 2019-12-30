@@ -14,6 +14,7 @@ import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.
 import { ProductMaster } from 'app/pages/product-master/product-master.component';
 import { LoginComponent } from 'app/pages/login/login.component';
 import { NotificationComponent } from 'app/pages/notification/notification.component';
+import { AccountComponent } from 'app/pages/account/account.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -27,5 +28,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'displayQr',      component: DisplayQrComponent },
     { path: 'Redeemption',    component: ProcessRedeemComponent },
     { path: 'notification',    component: NotificationComponent },
-    { path: 'login',         component: LoginComponent }
+    { path: 'login',         component: LoginComponent },
+    { path: 'account',         component: AccountComponent }
 ];
