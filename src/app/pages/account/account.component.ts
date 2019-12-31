@@ -42,11 +42,13 @@ export class AccountComponent implements OnInit{
         this.displayProducts();
         this.hide = false;
     }
-
+    $: any;
     ngOnInit(){
         this.user = new RvUser('','','','','','','','','','','','','','',true);
     }
-
+    hideModal(){
+        $("#myModal").modal('hide');
+    }
     displayProducts(){
         this.http.get(this.userListUrl).subscribe(
             (data:RvUser[]) => {
@@ -88,6 +90,7 @@ export class AccountComponent implements OnInit{
                         window.alert(data.responseStatusDescription);
                     }
                     else{
+                        this.hideModal();
                         window.alert(data.responseStatusDescription);
                     }
             }
@@ -109,6 +112,7 @@ export class AccountComponent implements OnInit{
                 }else
                 {
                     this.hide = false;
+                    this.hideModal();
                     window.alert('Kyc documents not yet uploaded');
                 }
             

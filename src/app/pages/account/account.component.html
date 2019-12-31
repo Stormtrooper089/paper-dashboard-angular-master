@@ -50,8 +50,21 @@
       </div>
       </div>
       <!-- End File Upload -->
+      <!-- Start of Kyc Verification -->
+      <!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog " >
+    <div class="modal-content">
+      <!-- <div class="card-body" *ngIf="hide"> -->
+         <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Verify KYC Details</h4>
+        <button type="button" class="close" (click)="hideModal()">&times;</button>
+      </div>
 
-      <div class="card-body" *ngIf="hide">
+      <div  class="modal-body">
+
+        <!-- Modal body -->
         <div class="row" >
           
             <div class="col-md-4 pr-1">
@@ -64,14 +77,23 @@
                 <img [src]="self"/>
             </div>
         </div>
-        <div class="row">
+      </div>
+        <!-- Modal footer -->
+      <div class="modal-footer">
           <div class="col-md-6 pr-1">
             <button type="submit" class="btn btn-primary btn-round" (click)="approveKyc()">Approve</button>
           
             <button type="submit" class="btn btn-danger btn-round" (click)="RejectKyc()">Reject</button>
           </div>
         </div>
-      </div>
+      
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+      <!-- End of Kyc Verification -->
+
+      <!-- Start of View Account List-->
       <div class="card-body">
         <div class="table-responsive">
             <nav class="navbar">
@@ -120,7 +142,7 @@
                 </td>
                 <td>
                   <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
-                  (click)="viewKyc(item)" >View KYC</button>
+                  (click)="viewKyc(item)"  data-toggle="modal" data-target="#myModal" >View KYC</button>
                 </td>
               </tr>
             </tbody>
@@ -128,6 +150,9 @@
           </table>
         </div>
       </div>
+
+      <!-- End of View Account List-->
+
     </div>
   </div>
 </div>
