@@ -21,4 +21,5 @@ export const environment = {
   UserListUrl: 'https://rvbackoffice.herokuapp.com/api/account/list',
   showKycUrl: 'https://rvbackoffice.herokuapp.com/api/account/showKyc',
   UserUpdateUrl: 'https://rvbackoffice.herokuapp.com/api/account/updateUser',
+  kycApprovalUrl: 'https://rvbackoffice.herokuapp.com/api/account/kyc',
 };

@@ -19,6 +19,7 @@ export class AccountComponent implements OnInit{
     public userListUrl: string = environment.UserListUrl;
     public showKycUrl: string = environment.showKycUrl;
     public userupdateUrl: string = environment.UserUpdateUrl;
+    public kycApprovalUrl: string = environment.kycApprovalUrl;
     reverse: boolean = false;
     userMaster: RvUser[];
     user: RvUser;
@@ -75,10 +76,22 @@ export class AccountComponent implements OnInit{
     }
 
     approveKyc(){
-
+        this.kycApproval('Approved');
     }
     RejectKyc(){
-
+        this.kycApproval('Rejected');
+    }
+    kycApproval(status:string){
+        this.http.get(this.kycApprovalUrl+'/'+this.user.mobileNumber+'/'+status).subscribe(
+            (data:any) => {
+                    if(data.responseStatus === 'Failure'){
+                        window.alert(data.responseStatusDescription);
+                    }
+                    else{
+                        window.alert(data.responseStatusDescription);
+                    }
+            }
+        );
     }
     viewKyc(item:RvUser){
         this.http.get(this.showKycUrl+'/'+item.mobileNumber).subscribe(
@@ -92,16 +105,13 @@ export class AccountComponent implements OnInit{
                 this.showImage(data.panCardEncodedImage,'panCard');
                 this.showImage(data.adharCardEncodedImage,'aadharCard');
                 this.showImage(data.userProfileImage,'userProfile');
+                this.update(item);
                 }else
                 {
                     this.hide = false;
                     window.alert('Kyc documents not yet uploaded');
                 }
-              //this.panCard ='data:image/jpeg;base64,'+ data.panCardEncodedImage;
-
-            //   const reader = new FileReader();
-            //   reader.onload = (e) => this.panCard = e.target.result;
-            //   reader.readAsDataURL(new Blob([data.panCardEncodedImage]));
+            
                console.log(this.userKyc);
             });
     }
