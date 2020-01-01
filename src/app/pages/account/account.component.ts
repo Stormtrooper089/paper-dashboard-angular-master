@@ -7,6 +7,8 @@ import { RvUser } from 'app/shared/models/RvUser';
 import { UserKyc } from 'app/shared/models/UserKyc';
 import { DomSanitizer } from '@angular/platform-browser';
 
+    // This lets me use jquery
+    declare var $: any;
 @Component({
     selector: 'user-cmp',
     moduleId: module.id,
@@ -42,12 +44,13 @@ export class AccountComponent implements OnInit{
         this.displayProducts();
         this.hide = false;
     }
-    $: any;
+    
     ngOnInit(){
         this.user = new RvUser('','','','','','','','','','','','','','',true);
     }
     hideModal(){
         $("#myModal").modal('hide');
+        document.getElementById('close-modal').click();
     }
     displayProducts(){
         this.http.get(this.userListUrl).subscribe(
