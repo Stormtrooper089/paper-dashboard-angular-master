@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QrMaster } from 'app/shared/models/qr-master';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../../environments/environment';
+import { Response } from 'app/shared/models/Response';
 
 declare interface TableData {
     headerRow: string[];
@@ -20,6 +21,7 @@ export class DisplayQrComponent implements OnInit{
     public rows: string[][];
     public qrMaster: QrMaster[];
     public qrListUrl: string = environment.qrListUrl;
+    qrUpdateUrl:string = environment.qrUpdateUrl;
 
     p: number = 1;
     //sorting
@@ -43,5 +45,19 @@ export class DisplayQrComponent implements OnInit{
             (data:QrMaster[]) => {
               this.qrMaster = data;
             });
+    }
+
+    activateQr(item: QrMaster){
+      let bodyData = JSON.parse(JSON.stringify(item));  
+        this.http.post(this.qrUpdateUrl,bodyData).subscribe(
+          (data:Response) => {
+              if(data.responseStatus === 'Success'){
+                    let responseMessage = data.responseStatusDescription;
+                    window.alert(responseMessage);
+              }else{
+                  window.alert(data.responseStatusDescription);
+              }
+          }
+        );
     }
 }
