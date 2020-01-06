@@ -80,7 +80,7 @@
                 <td >
                   <button type="submit" [(ngModel)]="item" ngDefaultControl
                    class="{{ (item.delFlg === 'N'?'btn btn-danger':'btn btn-primary') }}" 
-                  (click)="changeStatus(item)" >{{ (item.delFlg === 'N'?'Suspend':'Active') }}</button>
+                  (click)="changeStatus(item)" >{{ (item.delFlg === 'N'?'Suspend':'Activate') }}</button>
                 </td>
                 <td>
                   <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
