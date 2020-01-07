@@ -11,7 +11,11 @@
             <div class="col-md-6 pr-1">
               <div class="form-group">
                 <label>Product Id</label>
-                <input type="text" class="form-control" name="productId" placeholder="Product ID" [(ngModel)]="qrRequest.productId">
+                <!-- <input type="text" class="form-control" name="productId" placeholder="Product ID" [(ngModel)]="qrRequest.productId"> -->
+                <select  class="form-control" [(ngModel)]="selectedProduct" name="item" id="productType" data-live-search="true">
+                  <option value="" disabled selected>Select Product</option>
+                  <option *ngFor="let item of products" [value]="item.productName">{{item.productName}}</option>
+                </select>
               </div>
             </div>
             <div class="col-md-6 pl-1">

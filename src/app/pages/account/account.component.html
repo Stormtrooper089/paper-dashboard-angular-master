@@ -1,0 +1,158 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Vankon Users </h4>
+      </div>
+      <!-- File Upload -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 pr-1">
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-3 pr-1">
+                    <div class="form-group">
+                      <label>Mobile Number</label>
+                      <input type="text" class="form-control"
+                       name="mobileNumber" placeholder="Mobile Number"
+                        [(ngModel)]="user.mobileNumber" disabled>
+                    </div>
+                  </div>
+                  <div class="col-md-6 pr-1">
+                    <div class="form-group">
+                      <label>First Name</label>
+                      <input type="text" class="form-control" name="firstName" 
+                      placeholder="First Name" [(ngModel)]="user.firstName">
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 pr-1">
+                    <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" class="form-control col-md-12" name="lastName"
+                       placeholder="Last Name" [(ngModel)]="user.lastName">
+                    </div>
+                  </div> 
+
+                </div>
+                <div class="row">
+                  <div class="update ml-auto mr-auto">
+                    <button type="submit" class="btn btn-primary btn-round" (click)="submitUser()">Update</button>
+                  </div>
+                  
+                </div>
+                <div class="row">
+                    <h4>{{responseMessage}}</h4>
+                </div>
+              </form>
+            </div>
+      </div>
+      </div>
+      <!-- End File Upload -->
+      <!-- Start of Kyc Verification -->
+      <!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog " >
+    <div class="modal-content">
+      <!-- <div class="card-body" *ngIf="hide"> -->
+         <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Verify KYC Details</h4>
+        <button type="button" class="close" (click)="hideModal()">&times;</button>
+      </div>
+
+      <div  class="modal-body">
+
+        <!-- Modal body -->
+        <div class="row" >
+          
+            <div class="col-md-4 pr-1">
+                <img [src]="panCard"/>
+            </div>
+            <div class="col-md-4 pr-1">
+                <img [src]="aadharCard"/>
+            </div>
+            <div class="col-md-4 pr-1">
+                <img [src]="self"/>
+            </div>
+        </div>
+      </div>
+        <!-- Modal footer -->
+      <div class="modal-footer">
+          <div class="col-md-6 pr-1">
+            <button type="submit" class="btn btn-primary btn-round" (click)="approveKyc()">Approve</button>
+          
+            <button type="submit" class="btn btn-danger btn-round" (click)="RejectKyc()">Reject</button>
+          </div>
+        </div>
+      
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+      <!-- End of Kyc Verification -->
+
+      <!-- Start of View Account List-->
+      <div class="card-body">
+        <div class="table-responsive">
+            <nav class="navbar">
+                <input class="form-control" type="text" name="search" [(ngModel)]="filter">      
+              </nav>
+          <table class="table">
+            <thead class=" text-primary"> 
+              <th>
+                Mobile Number
+              </th>
+              <th>
+                First Name
+              </th>
+              <th (click)="sort('delFlg')">
+                Last Name
+              </th>
+              <th>
+                User Status
+              </th>
+              <th>
+                Update User
+              </th>
+              <th>
+                KYC
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of userMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                <td>
+                  {{item.mobileNumber}}
+                </td>
+                <td>
+                  {{item.firstName}}
+                </td>
+                <td>
+                  {{item.lastName}}
+                </td>
+                <td >
+                  <button type="submit" [(ngModel)]="item" ngDefaultControl
+                   class="{{ (item.active? 'btn btn-danger':'btn btn-primary') }}" 
+                  (click)="changeStatus(item)" >{{ (item.active? 'Suspend':'Activate') }}</button>
+                </td>
+                <td>
+                  <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
+                  (click)="update(item)" >Update</button>
+                </td>
+                <td>
+                  <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
+                  (click)="viewKyc(item)"  data-toggle="modal" data-target="#myModal" >View KYC</button>
+                </td>
+              </tr>
+            </tbody>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </table>
+        </div>
+      </div>
+
+      <!-- End of View Account List-->
+
+    </div>
+  </div>
+</div>

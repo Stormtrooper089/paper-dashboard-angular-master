@@ -2,9 +2,9 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title"> Vankon Backoffice User </h4>
+        <h4 class="card-title"> Notifications </h4>
       </div>
-      <!-- File Upload -->
+
       <div class="card-body">
         <div class="row">
           <div class="col-md-12 pr-1">
@@ -13,30 +13,32 @@
                 <div class="row">
                   <div class="col-md-3 pr-1">
                     <div class="form-group">
-                      <label>Mobile Number</label>
+                      <label>Title</label>
                       <input type="text" class="form-control"
-                       name="mobileNumber" placeholder="Mobile Number"
-                        [(ngModel)]="user.mobileNumber">
+                       name="Title" placeholder="Title"
+                        [(ngModel)]="notification.notificationTitle">
                     </div>
                   </div>
                   <div class="col-md-6 pr-1">
                     <div class="form-group">
-                      <label>Email ID</label>
-                      <input type="text" class="form-control" name="emailId" placeholder="Email ID" [(ngModel)]="user.emailId">
+                      <label>Message</label>
+                      <input type="text" class="form-control" name="Message" 
+                      placeholder="Message" [(ngModel)]="notification.notificationMessage">
                     </div>
                   </div>
 
                   <div class="col-md-3 pr-1">
                     <div class="form-group">
-                      <label>Password</label>
-                      <input type="text" class="form-control col-md-12" name="password" placeholder="Password" [(ngModel)]="user.password">
+                      <label>Receiver</label>
+                      <input type="text" class="form-control col-md-12" 
+                      name="Receiver Key" placeholder="Receiver" [(ngModel)]="notification.notificationReceiverKey">
                     </div>
                   </div> 
 
                 </div>
                 <div class="row">
                   <div class="update ml-auto mr-auto">
-                    <button type="submit" class="btn btn-primary btn-round" (click)="submitUser()">{{userAction}}</button>
+                    <button type="submit" class="btn btn-primary btn-round" (click)="createNotification()">Send Notification</button>
                   </div>
                   
                 </div>
@@ -47,7 +49,6 @@
             </div>
       </div>
       </div>
-      <!-- End File Upload -->
 
       <div class="card-body">
         <div class="table-responsive">
@@ -57,34 +58,38 @@
           <table class="table">
             <thead class=" text-primary"> 
               <th>
-                Mobile Number
+                Title
+              </th>
+              <th (click)="sort('productId')">
+                Message
+              </th>
+              <th  class="text-right">
+                Receiver Key
               </th>
               <th>
-                Email ID
+                Creation Date
               </th>
-              <th (click)="sort('delFlg')">
-                Change Status
-              </th>
-              <th  >
-                Update User
+              <th>
+                Re-send
               </th>
             </thead>
             <tbody>
-              <tr *ngFor="let item of userMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+              <tr *ngFor="let item of notifications | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                 <td>
-                  {{item.mobileNumber}}
+                  {{item.notificationTitle}}
                 </td>
                 <td>
-                  {{item.emailId}}
+                  {{item.notificationMessage}}
                 </td>
-                <td >
-                  <button type="submit" [(ngModel)]="item" ngDefaultControl
-                   class="{{ (item.delFlg === 'N'?'btn btn-danger':'btn btn-primary') }}" 
-                  (click)="changeStatus(item)" >{{ (item.delFlg === 'N'?'Suspend':'Activate') }}</button>
+                <td class="text-right">
+                  {{item.notificationReceiverKey}}
                 </td>
                 <td>
-                  <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
-                  (click)="update(item)" >Update</button>
+                    {{item.notificationCreationDate}}
+                </td>
+                <td>
+                    <button type="submit" [(ngModel)]="item" ngDefaultControl class="btn btn-primary" 
+                    (click)="sendNotification(item)" >Re-send</button>
                 </td>
               </tr>
             </tbody>

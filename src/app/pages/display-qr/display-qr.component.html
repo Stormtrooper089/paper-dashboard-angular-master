@@ -34,7 +34,7 @@
                   </th>
             </thead>
             <tbody>
-              <tr *ngFor="let item of qrMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+              <tr *ngFor="let item of qrMaster | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                 <td>
                   {{item.id}}
                 </td>
@@ -50,8 +50,11 @@
                 <td class="text-right">
                   {{item.points}}
                 </td>
-                <td>
-                    {{item.activationStatus === 0 ? 'Not Activated':'Activated' }}
+                <td >
+                  <button type="submit" [(ngModel)]="item" ngDefaultControl
+                   class="{{ (item.activationStatus === 0 ? 'btn btn-danger':'btn btn-primary') }}" 
+                  (click)="activateQr(item)" disabled="{{ (item.activationStatus === 0 ? false:true) }}"
+                  >{{ (item.activationStatus === 0 ? 'Activate Batch':'Already Activated') }}</button>
                 </td>
                 <td>
                     {{item.createdBy}}

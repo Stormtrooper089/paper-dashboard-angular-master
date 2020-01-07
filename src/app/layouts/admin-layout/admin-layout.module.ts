@@ -20,6 +20,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.component';
+import { ProductMaster } from 'app/pages/product-master/product-master.component';
+import { LoginComponent } from 'app/pages/login/login.component';
+import { NotificationComponent } from 'app/pages/notification/notification.component';
+import { AccountComponent } from 'app/pages/account/account.component';
 
 @NgModule({
   imports: [
@@ -41,7 +45,11 @@ import { ProcessRedeemComponent } from 'app/pages/process-redeem/process-redeem.
     NotificationsComponent,
     QrComponent,
     DisplayQrComponent,
-    ProcessRedeemComponent
+    ProcessRedeemComponent,
+    ProductMaster,
+    LoginComponent,
+    NotificationComponent,
+    AccountComponent
   ]
 })
 

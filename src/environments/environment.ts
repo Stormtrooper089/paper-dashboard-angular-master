@@ -6,8 +6,21 @@
 export const environment = {
   production: false,
   qrListUrl:'https://rvbackoffice.herokuapp.com/api/getQrList',
+  qrUpdateUrl: 'https://rvbackoffice.herokuapp.com/api/updateQrList',
   qrRequestUrl: 'https://rvbackoffice.herokuapp.com/api/generateQRExcel',
   fileDownloadUrl:'https://rvbackoffice.herokuapp.com/api/downloadExcel/',
   redemptionListtUrl:'https://rvbackoffice.herokuapp.com/api/redeemRequests/',
-  redemptionPosttUrl:'https://rvbackoffice.herokuapp.com/api/postRedeemRequests/'
+  redemptionPosttUrl:'https://rvbackoffice.herokuapp.com/api/postRedeemRequests/',
+  productMasterUploadUrl:'https://rvbackoffice.herokuapp.com/api/upload/productMaster',
+  productListUrl: 'https://rvbackoffice.herokuapp.com/api/getProductList',
+  appUserListUrl: 'https://rvbackoffice.herokuapp.com/user/list',
+  appUserCreateUrl: 'https://rvbackoffice.herokuapp.com/user/createUser',
+  appUserUpdateUrl: 'https://rvbackoffice.herokuapp.com/user/updateUser',
+  authenticationUrl: 'https://rvbackoffice.herokuapp.com/login',
+  notificationListUrl: 'https://rvbackoffice.herokuapp.com/api/notification/list',
+  createNotificationUrl: 'https://rvbackoffice.herokuapp.com/api/notification/public',
+  UserListUrl: 'https://rvbackoffice.herokuapp.com/api/account/list',
+  showKycUrl: 'https://rvbackoffice.herokuapp.com/api/account/showKyc',
+  UserUpdateUrl: 'https://rvbackoffice.herokuapp.com/api/account/updateUser',
+  kycApprovalUrl: 'https://rvbackoffice.herokuapp.com/api/account/kyc',
 };
