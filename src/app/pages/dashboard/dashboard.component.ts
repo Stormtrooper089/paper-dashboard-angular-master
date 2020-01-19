@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import Chart from "chart.js";
 import { HttpClient } from "@angular/common/http";
 import { Stats } from "../../shared/models/stats";
+import {formatDate} from '@angular/common';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: "dashboard-cmp",
@@ -14,15 +16,42 @@ export class DashboardComponent implements OnInit {
   public chartColor;
   public chartEmail;
   public chartHours;
-  qrStatUrl: string = "https://rvbackoffice.herokuapp.com/api/qrStats/qr";
-  redeemStatUrl: string = "https://rvbackoffice.herokuapp.com/api/qrStats/qr1";
+  totalRedeem:any;
+  totalScanned:any;
+  currentDate :any;
+  qrStatUrl: string = environment.qrStatUrl;
+  redeemStatUrl: string = environment.redeemStatUrl;
+  totalRedeemUrl = environment.totalRedeemUrl;
+  totalScannedUrl = environment.totalScannedUrl;
+  totalUserUrl = environment.totalUserUrl;
   qrStats: Stats[];
   redeemStats: Stats[];
+  activeUser:any = 0;
+  inActiveUser:any = 0;
 
   constructor(public http: HttpClient) {
     //this.drawStatGraph();
+    this.getDashboardStats();
   }
   
+  async getDashboardStats(){
+        this.currentDate = formatDate(new Date(),'yyyy-MM-dd','en');
+        this.http.get(this.totalRedeemUrl+"/"+this.currentDate).subscribe((data:any) => {
+            this.totalRedeem = data;
+            console.log('Total Redeem'+this.totalRedeem)
+          });
+
+        this.http.get(this.totalScannedUrl+"/"+this.currentDate).subscribe((data:any) => {
+          this.totalScanned = data;
+          console.log('Total Scanned '+ this.totalScanned);
+        });
+      
+      this.http.get(this.totalUserUrl).subscribe((data:any[]) => {
+        this.activeUser = data[0].count;
+        this.inActiveUser = data[1].count;
+    });
+  }
+
   ngOnInit() {
     this.chartColor = "#FFFFFF";
 

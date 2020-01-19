@@ -23,4 +23,9 @@ export const environment = {
   showKycUrl: 'https://rvbackoffice.herokuapp.com/api/account/showKyc',
   UserUpdateUrl: 'https://rvbackoffice.herokuapp.com/api/account/updateUser',
   kycApprovalUrl: 'https://rvbackoffice.herokuapp.com/api/account/kyc',
+  qrStatUrl: "https://rvbackoffice.herokuapp.com/api/qrStats/qr",
+  redeemStatUrl: "https://rvbackoffice.herokuapp.com/api/qrStats/qr1",
+  totalRedeemUrl:"https://rvbackoffice.herokuapp.com/api/analytic/total/points/redeemed/2019-12-01",
+  totalScannedUrl:"https://rvbackoffice.herokuapp.com/api/analytic/total/points/scanned/2019-12-01",
+  totalUserUrl:"https://rvbackoffice.herokuapp.com/api/analytic/total/user",
 };

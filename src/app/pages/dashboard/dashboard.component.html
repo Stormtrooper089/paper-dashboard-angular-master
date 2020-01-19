@@ -11,7 +11,7 @@
           <div class="col-7 col-md-8">
             <div class="numbers">
               <p class="card-category">Active Users</p>
-              <p class="card-title">150
+              <p class="card-title">{{activeUser}}
                 <p>
             </div>
           </div>
@@ -37,7 +37,7 @@
           <div class="col-7 col-md-8">
             <div class="numbers">
               <p class="card-category">Total Redeem</p>
-              <p class="card-title">$ 1,345
+              <p class="card-title"> {{totalRedeem}}
                 <p>
             </div>
           </div>
@@ -46,7 +46,7 @@
       <div class="card-footer ">
         <hr>
         <div class="stats">
-          <i class="fa fa-calendar-o"></i> Last Month
+          <i class="fa fa-calendar-o"></i> Current Day
         </div>
       </div>
     </div>
@@ -62,8 +62,8 @@
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category">To be Redeem</p>
-              <p class="card-title">$ 5,000
+              <p class="card-category">Total Scanned</p>
+              <p class="card-title"> {{totalScanned}}
                 <p>
             </div>
           </div>
@@ -72,7 +72,7 @@
       <div class="card-footer ">
         <hr>
         <div class="stats">
-          <i class="fa fa-clock-o"></i> Current Month
+          <i class="fa fa-clock-o"></i> Current Day
         </div>
       </div>
     </div>
@@ -88,8 +88,8 @@
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category">QR Scanned</p>
-              <p class="card-title">+45K
+              <p class="card-category">In-Active User</p>
+              <p class="card-title">{{inActiveUser}}
                 <p>
             </div>
           </div>
