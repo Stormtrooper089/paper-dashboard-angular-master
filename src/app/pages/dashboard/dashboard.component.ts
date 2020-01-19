@@ -47,8 +47,8 @@ export class DashboardComponent implements OnInit {
         });
       
       this.http.get(this.totalUserUrl).subscribe((data:any[]) => {
-        this.activeUser = data[0].count;
-        this.inActiveUser = data[1].count;
+        this.activeUser = data[1].count;
+        this.inActiveUser = data[0].count;
     });
   }
 
